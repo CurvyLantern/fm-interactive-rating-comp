@@ -1,49 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="./src/css/main.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <title>
+            Frontend Mentor | Interactive rating component
+        </title>
+    </head>
+    <body
+        class="min-h-screen bg-black flex flex-col items-center justify-center gap-10"
+    >
+        <div
+            class="rating__card-container bg-slate-800 w-96 p-5 rounded-xl"
+        >
+            <div
+                class="flex flex-col gap-5"
+                id="ratingCard"
+            >
+                <div>
+                    <span
+                        class="inline-block p-2 aspect-square bg-slate-700 rounded-full"
+                    >
+                        <img
+                            src="./images/icon-star.svg"
+                            alt="Star icon"
+                        />
+                    </span>
+                </div>
+                <h2
+                    class="text-3xl text-white font-semibold"
+                >
+                    How did we do?
+                </h2>
+                <p class="text-white text-md">
+                    Please let us know how we did with your
+                    support request. All feedback is
+                    appreciated to help us improve our
+                    offering!
+                </p>
+                <div
+                    class="flex items-center justify-evenly"
+                    id="ratingContainer"
+                >
+                    <button
+                        class="rounded-full bg-slate-700 text-gray-400 w-10 aspect-square flex items-center justify-center transition hover:bg-slate-400 hover:text-white"
+                        value="1"
+                    >
+                        1
+                    </button>
+                    <button
+                        class="rounded-full bg-slate-700 text-gray-400 w-10 aspect-square flex items-center justify-center transition hover:bg-slate-400 hover:text-white"
+                        value="2"
+                    >
+                        2
+                    </button>
+                    <button
+                        class="rounded-full bg-slate-700 text-gray-400 w-10 aspect-square flex items-center justify-center transition hover:bg-slate-400 hover:text-white"
+                        value="3"
+                    >
+                        3
+                    </button>
+                    <button
+                        class="rounded-full bg-slate-700 text-gray-400 w-10 aspect-square flex items-center justify-center transition hover:bg-slate-400 hover:text-white"
+                        value="4"
+                    >
+                        4
+                    </button>
+                    <button
+                        class="rounded-full bg-slate-700 text-gray-400 w-10 aspect-square flex items-center justify-center transition hover:bg-slate-400 hover:text-white"
+                        value="5"
+                    >
+                        5
+                    </button>
+                </div>
+                <div class="flex">
+                    <button
+                        class="transition bg-orange-500 hover:bg-white text-white hover:text-orange-500 flex-1 py-2 rounded-3xl"
+                        id="sumbitBtn"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </div>
 
-  <!-- Rating state start -->
+            <div
+                class="rating__card--is-not-active flex flex-col items-center gap-5 text-center"
+                id="thankYouCard"
+            >
+                <!-- Thank you state start -->
+                <div>
+                    <span>
+                        <img
+                            src="./images/illustration-thank-you.svg"
+                            alt="illustration"
+                        />
+                    </span>
+                </div>
 
-  How did we do?
+                <p
+                    class="text-orange-500 bg-slate-700 py-1 px-5 rounded-3xl"
+                >
+                    You selected
+                    <span id="insertRating">4</span> out of
+                    5
+                </p>
+                <!-- Add rating here -->
+                <h2
+                    class="text-3xl text-white font-semibold"
+                >
+                    Thank you!
+                </h2>
+                <p class="text-gray-400 text-md">
+                    We appreciate you taking the time to
+                    give a rating. If you ever need more
+                    support, don’t hesitate to get in touch!
+                </p>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+                <!-- Thank you state end -->
+            </div>
+        </div>
 
-  1 2 3 4 5
+        <div class="text-white flex flex-col gap-5">
+            <div
+                class="flex items-center justify-between gap-5"
+            >
+                <span>Challenge by</span>
+                <a
+                    class="underline underline-offset-2 text-blue-600 font-semibold inline-block px-1 py-2 bg-gray-300 rounded-md"
+                    href="https://www.frontendmentor.io?ref=challenge"
+                    target="_blank"
+                    >Frontend Mentor.</a
+                >
+            </div>
+            <div class="flex items-center justify-between">
+                <span>Coded by</span>
+                <a
+                    href="https://github.com/CurvyLantern"
+                    target="_blank"
+                    class="underline underline-offset-2 text-blue-600 font-semibold inline-block px-1 py-2 bg-gray-300 rounded-md"
+                    >Curvy Lantern .</a
+                >
+            </div>
+        </div>
 
-  Submit
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <script src="./src/js/main.js"></script>
+    </body>
 </html>
+

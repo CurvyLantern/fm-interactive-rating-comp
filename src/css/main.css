@@ -1,0 +1,3 @@
+.rating__card-container > .rating__card--is-not-active {
+    display: none;
+}
